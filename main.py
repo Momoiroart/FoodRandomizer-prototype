@@ -1,27 +1,25 @@
 import random as r
+import json
 
-food = {
-    "japanese": [
-        "Ramen",
-        "Sushi",
-        "Tonkatsu",
-        "Curry"
-    ],
-    "thai": [
-        "Pad Thai",
-        "Som Tum",
-        "Krapow",
-        "Suki/Shabu"
-    ],
-    "western": [
-        "Pizza",
-        "Spaghetti",
-        "Burger",
-        "Steak"
-    ]
-}
+try:
+    with open('food_database.json', 'r',encoding = 'utf-8') as file:
+        fooddb = json.load(file)
+    while True:
+        randomcat = r.choice(list(fooddb["category"].keys()))
+        randommenu = r.choice(fooddb["category"][randomcat]["menus"])
 
-print(f"Available categories: {list(food.keys())}")
+        print("\n [Recomend Menu!!!!]")
+        print(f'Would you like to try: {randommenu}')
+
+
+
+
+except FileNotFoundError:
+    print("Error: หาไฟล์ 'food_database.json' ไม่เจอครับ กรุณาตรวจสอบไฟล์อีกครั้ง")
+
+
+
+'''print(f"Available categories: {list(food.keys())}")
 choice = input("What do you want to eat? (japanese/thai/western): ").lower()
 
 while True:
@@ -40,7 +38,7 @@ while True:
 
     except KeyError:
         # ถ้าไม่มี key ที่พิมพ์มาใน Dictionary จะตกมาทำงานที่บล็อกนี้
-        print("Invalid category! Please try again.\n")
+        print("Invalid category! Please try again.\n")'''
 
 
 

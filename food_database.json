@@ -1,0 +1,13 @@
+{
+    "category": {
+        "japanese": { 
+            "menus": ["Ramen", "Sushi", "Tonkatsu", "Curry"] 
+        },
+        "thai": { 
+            "menus": ["Pad Thai", "Som Tum", "Krapow", "Suki/Shabu"] 
+        },
+        "western": {
+             "menus": ["Pizza", "Spaghetti", "Burger", "Steak"] 
+        }
+    }
+}
