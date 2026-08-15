@@ -1,2 +1,6 @@
 # Ignore environment file containing secret 
 .env
+
+# Ignore Gemini documentation
+gemini.md
+GEMINI.md
