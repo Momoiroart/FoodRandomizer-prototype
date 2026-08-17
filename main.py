@@ -12,7 +12,7 @@ from logic import FoodRecommender
 class FoodApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.recommender = FoodRecommender()
+        self.recommender = FoodRecommender('food_database.json')
         self.current_category = None
         self.init_ui()
 
@@ -34,7 +34,11 @@ class FoodApp(QWidget):
         self.subtitle_label.setAlignment(Qt.AlignCenter)
         self.subtitle_label.setFont(QFont("Segoe UI", 14))
         self.subtitle_label.setStyleSheet("color: #8E8E93;")
-
+        self.category_choice = QComboBox()
+        self.category_choice.addItem("All Category")
+        for category in self.recommender.get_category():
+            self.category_choice.addItem(category.capitalize())
+        self.RightPlace = QLabel('This is Right Section')
 
 
 
@@ -42,6 +46,8 @@ class FoodApp(QWidget):
 
         main_layout.addWidget(self.title_label)
         main_layout.addWidget(self.subtitle_label)
+        LeftLayout.addWidget(self.category_choice)
+        RightLayout.addWidget(self.RightPlace)
         SectionLayout.addLayout(LeftLayout)
         SectionLayout.addLayout(RightLayout)
         main_layout.addLayout(SectionLayout)
