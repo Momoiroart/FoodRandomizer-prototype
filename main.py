@@ -22,6 +22,7 @@ class FoodApp(QWidget):
         main_layout = QVBoxLayout()
         SectionLayout = QHBoxLayout()
         LeftLayout = QVBoxLayout()
+        BottomLeft =QVBoxLayout()
         RightLayout= QVBoxLayout()
         main_layout.setContentsMargins(50, 40, 50, 40)
         main_layout.setSpacing(25)
@@ -34,6 +35,10 @@ class FoodApp(QWidget):
         self.subtitle_label.setAlignment(Qt.AlignCenter)
         self.subtitle_label.setFont(QFont("Segoe UI", 14))
         self.subtitle_label.setStyleSheet("color: #8E8E93;")
+        self.about_label = QLabel('About:\n"Description"')
+        self.subtitle_label.setAlignment(Qt.AlignCenter)
+        self.subtitle_label.setFont(QFont("Segoe UI", 14))
+        self.subtitle_label.setStyleSheet("color: #8E8E93;")
         self.category_choice = QComboBox()
         self.category_choice.addItem("All Category")
         for category in self.recommender.get_category():
@@ -41,13 +46,12 @@ class FoodApp(QWidget):
         self.RightPlace = QLabel('This is Right Section')
 
 
-
-
-
         main_layout.addWidget(self.title_label)
         main_layout.addWidget(self.subtitle_label)
         LeftLayout.addWidget(self.category_choice)
         RightLayout.addWidget(self.RightPlace)
+        BottomLeft.addWidget(self.about_label)
+        LeftLayout.addLayout(BottomLeft)
         SectionLayout.addLayout(LeftLayout)
         SectionLayout.addLayout(RightLayout)
         main_layout.addLayout(SectionLayout)
