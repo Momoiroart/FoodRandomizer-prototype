@@ -1,13 +1,28 @@
 {
     "category": {
         "japanese": { 
-            "menus": ["Ramen", "Sushi", "Tonkatsu", "Curry"] 
+            "menus": [
+                {"name": "Ramen", "image": "Ramen.jpg"},
+                {"name": "Sushi", "image": "Sushi.jpg"},
+                {"name": "Tonkatsu", "image": "Tonkatsu.jpg"},
+                {"name": "Curry", "image": "Curry.jpg"}
+            ]
         },
         "thai": { 
-            "menus": ["Pad Thai", "Som Tum", "Krapow", "Suki/Shabu"] 
+            "menus": [
+                {"name": "Pad Thai", "image": "Pathai.jpg"},
+                {"name": "Som Tum", "image": "Somtum.jpg"},
+                {"name": "Krapow", "image": "Krapraw.jpg"},
+                {"name": "Suki/Shabu", "image": "Suki.jpg"}
+            ]
         },
         "western": {
-             "menus": ["Pizza", "Spaghetti", "Burger", "Steak"] 
+            "menus": [
+                {"name": "Pizza", "image": "Pizza.jpg"},
+                {"name": "Spaghetti", "image": "Spagetti.jpg"},
+                {"name": "Burger", "image": "Burger.jpg"},
+                {"name": "Steak", "image": "Steak.jpg"}
+            ]
         }
     }
 }

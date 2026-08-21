@@ -7,13 +7,16 @@ class FoodRecommender:
             self.fooddb = json.load(file)
         self.categories = list(self.fooddb["category"].keys())
         self.current_category = None
-
-    def get_random_food(self,category = None):
-        if category == None:
+    
+    def get_random_food(self, category=None):
+        """คืนค่า dict {"name": ..., "image": ...} ของเมนูที่สุ่มได้"""
+        if category is None or category == "All Category":
             randomcat = r.choice(self.categories)
-            return r.choice(self.fooddb["category"][randomcat]["menues"])
+            return r.choice(self.fooddb["category"][randomcat]["menus"])
         else:
-            return r.choice(self.fooddb["category"][category]["menus"])
+            # รองรับทั้งชื่อ lowercase และ capitalize
+            cat_key = category.lower()
+            return r.choice(self.fooddb["category"][cat_key]["menus"])
             
     def get_category(self):
         return self.categories
